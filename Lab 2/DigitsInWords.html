@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digits In Words</title>
+</head>
+
+<body>
+    <script>
+        let n = parseInt(prompt("Enter a number between 0-999 : "));
+        if (n == NaN) {
+            alert("Not a number ");
+        }
+        else if (n < 0 || n > 999) {
+            alert("Out of range");
+        } else {
+            let ans = "";
+            let units = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+            let teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+            let tens = ['twenty', 'thrity', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+            if (n >= 100) {
+                ans = units[parseInt(n / 100)-1] + " hundred ";
+                n %= 100;
+            }
+            if (n >= 20) {
+                ans = ans + tens[parseInt(n / 10)-2] + " ";
+                n %= 10;
+            }
+            if(n >= 10){
+                ans = ans + teens[n-10] + " ";
+                n %= 10;
+            }
+            if(n > 0){
+                ans = ans + units[n-1];
+            }
+            alert(ans);
+        }
+    </script>
+</body>
+
+</html>
