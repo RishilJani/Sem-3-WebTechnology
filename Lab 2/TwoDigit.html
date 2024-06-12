@@ -13,11 +13,7 @@
         let a = parseInt(n/10);
         let b = parseInt(n % 10);
 
-        let ans = 1;
-        while(b > 0){
-            ans = ans * a;
-            b--;
-        }
+        let ans = Math.pow(a,b);
         alert(ans);
     </script>
 </body>
