@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort</title>
+</head>
+
+<body>
+    <script>
+        function partition(arr, low, high) {
+            let pivot = arr[high];
+            let i = low - 1;
+
+            for (let j = 0; j < high; j++) {
+                if (arr[j] < pivot) {
+                    i++;
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+                }
+            }
+            [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+            return i + 1;
+        }
+        function quickSort(arr, low, right) {
+            if (low < right) {
+                let pivot = partition(arr, low, right);
+
+                quickSort(arr, low, pivot - 1);
+                quickSort(arr, pivot + 1, right);
+            }
+        }
+
+        let len = parseInt(prompt("Enter size of array : "));
+        let arr = [];
+        for (let i = 0; i < len; i++) {
+            arr[i] = parseInt(prompt("Enter arr [" + i + "] = "));
+        }
+        quickSort(arr, 0, arr.length - 1);
+
+        document.write("arr = " + arr);
+    </script>
+</body>
+
+</html>
