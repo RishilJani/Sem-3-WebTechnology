@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+</head>
+
+<body>
+    <table>
+        <tr></tr>
+    </table>
+    <script>
+        let arr = [
+            {
+                "name": "Homer Dickinson",
+                "salary": 13506,
+                "mobile": "875.505.9977 x93162",
+                "id": "1"
+            },
+            {
+                "name": "Janet Durgan V",
+                "salary": 1978,
+                "mobile": "978.268.8310",
+                "id": "2"
+            },
+            {
+                "name": "Lamar Crona",
+                "salary": 88432,
+                "mobile": "243-970-2575 x30182",
+                "id": "3"
+            },
+            {
+                "name": "Jeff Bergnaum",
+                "salary": 16758,
+                "mobile": "467.602.7624 x6545",
+                "id": "4"
+            },
+            {
+                "name": "Jerome Breitenberg I",
+                "salary": 64796,
+                "mobile": "(814) 909-2413 x76624",
+                "id": "5"
+            },
+            {
+                "name": "Vicky Kihn",
+                "salary": 12783,
+                "mobile": "359.358.5593 x73856",
+                "id": "6"
+            },
+            {
+                "name": "Clara Hane Jr.",
+                "salary": 76546,
+                "mobile": "1-598-470-0324",
+                "id": "7"
+            },
+            {
+                "name": "Ms. Devin Boehm",
+                "salary": 27630,
+                "mobile": "768.571.8274 x63752",
+                "id": "8"
+            },
+            {
+                "name": "Anthony Harber",
+                "salary": 68663,
+                "mobile": "1-413-996-9214 x12798",
+                "id": "9"
+            },
+            {
+                "name": "Ben Hoeger",
+                "salary": 9880,
+                "mobile": "852-275-6447 x7084",
+                "id": "10"
+            },
+            {
+                "name": "Diana Mayer",
+                "salary": 10615,
+                "mobile": "(232) 754-9984 x9065",
+                "id": "11"
+            },
+            {
+                "name": "Robyn Leannon",
+                "salary": 18339,
+                "mobile": "471-898-8135 x9607",
+                "id": "12"
+            },
+            {
+                "name": "Julia Senger",
+                "salary": 23258,
+                "mobile": "941-284-2283",
+                "id": "13"
+            },
+            {
+                "name": "Ramona Hyatt",
+                "salary": 38030,
+                "mobile": "1-923-494-2824 x6293",
+                "id": "14"
+            },
+            {
+                "name": "Kathy Thiel",
+                "salary": 93679,
+                "mobile": "461.868.5402 x1803",
+                "id": "15"
+            }
+        ]
+        document.write("<table border='1'>");
+        document.write("<tr>");
+        document.write("<th> ID </th>")
+        document.write("<th> Name </th>")
+        document.write("<th> Mobile </th>")
+        document.write("<th> Salary </th>")
+        document.write("</tr>");
+        for (let i = 0; i < arr.length; i++) {
+            document.write("<tr>");
+            document.write("<td>" + arr[i].id + "</td>");
+            document.write("<td>" + arr[i].name + "</td>");
+            document.write("<td>" + arr[i].mobile + "</td>");
+            document.write("<td>" + arr[i].salary + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+    </script>
+</body>
+
+</html>
