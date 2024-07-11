@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <script>
+        let n = prompt("Enter number of terms : ");
+        let a = 0;
+        let b = 1;
+        let sum = a + b;
+        let ans = " 0 , 1 ,";
+        for(i = 2;i < n;i++){
+            ans = ans + sum + " , ";
+            a = b;
+            b = sum;
+            sum = a + b;
+        }
+        alert("ans = " + ans);
+    </script>
+</body>
+
+</html>

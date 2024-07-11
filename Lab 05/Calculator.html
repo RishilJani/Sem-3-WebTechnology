@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+
+    <style>
+        input {
+            width: 80%;
+            height: 4vh;
+            margin: 5px;
+        }
+
+        button {
+            width: 20%;
+            height: 6vh;
+            margin: 5px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>અમે ધારીએ છીએ કે વપરાશકર્તા યોગ્ય ડેટા દાખલ કરશે</h3>
+    <form onsubmit="return false;">
+        <input type="text" id="txt" value="" name="ans" />
+
+        <br>
+
+        <button type="button" id="AC" onclick="ans.value = ''">AC</button>
+        <button type="button" id="C" onclick="ans.value = ans.value.slice(0, -1)">C</button>
+        <button type="button" id="%" onclick="ans.value = modulo(ans.value)">%</button>
+        <button type="button" id="/" onclick="ans.value = divide(ans.value)">/</button>
+
+        <br>
+
+        <button type="button" id="7" onclick="ans.value += '7'">7</button>
+        <button type="button" id="8" onclick="ans.value += '8'">8</button>
+        <button type="button" id="9" onclick="ans.value += '9'">9</button>
+        <button type="button" id="*" onclick="ans.value = multiply(ans.value)">*</button>
+        <br>
+
+        <button type="button" id="4" onclick="ans.value += '4'">4</button>
+        <button type="button" id="5" onclick="ans.value += '5'">5</button>
+        <button type="button" id="6" onclick="ans.value += '6'">6</button>
+        <button type="button" id="-" onclick="ans.value = substract(ans.value)">-</button>
+
+        <br>
+
+        <button type="button" id="1" onclick="ans.value += '1'">1</button>
+        <button type="button" id="2" onclick="ans.value += '2'">2</button>
+        <button type="button" id="3" onclick="ans.value += '3'">3</button>
+        <button type="button" id="+" onclick="ans.value = add(ans.value)">+</button>
+
+        <br>
+
+        <button type="button" id="+/-" onclick="ans.value = changeSign(ans.value)">+/-</button>
+        <button type="button" id="0" onclick="ans.value += '0'">0</button>
+        <button type="button" id="." onclick="ans.value += '.'">.</button>
+        <button type="button" id="=" onclick="ans.value = equals(ans.value)">=</button>
+    </form>
+    <script>
+        let op;
+        let pre = 0;
+        let curr = 0;
+        let ans;
+        function add(num) {
+            pre += parseFloat(num);
+            op = '+';
+            return ' ';
+        }
+
+        function substract(num) {
+            pre -= parseFloat(num);
+            op = '-';
+            return ' ';
+        }
+
+        function multiply(num) {
+            pre = parseFloat(num);
+            op = '*';
+            return ' ';
+        }
+
+        function divide(num) {
+            pre = parseFloat(num);
+            op = '/';
+            return ' ';
+        }
+
+        function modulo(num) {
+            pre = parseFloat(num);
+            op = '%';
+            return ' ';
+        }
+
+        function changeSign(num) {
+            let temp = parseFloat(num);
+            temp = -1 * temp;
+            return temp;
+        }
+        function equals(num) {
+
+            curr = parseFloat(num);
+            switch (op) {
+                case '+':
+                    ans = pre + curr;
+                    break;
+
+                case '-':
+                    ans = pre - curr;
+                    break;
+                case '*':
+                    ans = pre * curr;
+                    break;
+                case '/':
+                    if (curr != 0) {
+                        ans = pre / curr;
+                    } else {
+                        console.log("Enter non zero number ");
+                    }
+                    break;
+                case '%':
+                    if (curr != 0) {
+                        ans = (pre % curr);
+                    } else {
+                        console.log("Enter non zero number ");
+
+                    }
+                default:
+                    break;
+            }
+            pre = 0;
+            curr = 0;
+            return ans;
+        }
+    </script>
+</body>
+
+</html>
+<!-- <h3>અમે ધારીએ છીએ કે વપરાશકર્તા યોગ્ય ડેટા દાખલ કરશે</h3> -->

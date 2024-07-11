@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        div {
+            margin: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div id="usernameDiv">
+            <label for="username">Enter User name : </label>
+            <input type="text" id="username" required>
+        </div>
+
+        <div id="passwordDiv">
+            <label for="password">Enter Password : </label>
+            <input type="text" id="password" required>
+        </div>
+
+        <div id="passRepeatDiv">
+            <label for="passwordRepeat">Enter Password again : </label>
+            <input type="text" id="passwordRepeat" required>
+        </div>
+
+        <div id="ageDiv">
+            <label>Enter Date of Birth :</label>
+            <input type="date" id="age" required>
+        </div>
+
+        <div id="enrollment">
+            <label for="enrollment">Enter enrollment number : </label>
+            <input type="number" id="enroll" required>
+        </div>
+
+        <div id="emailDiv">
+            <label for="email">Enter Email : </label>
+            <input type="text" id="email" required>
+        </div>
+
+        <div id="submit">
+            <button type="submit" onsubmit="validate()">Submit</button>
+        </div>
+    </form>
+
+    <script>
+
+
+        let patternName = /[\w]{8,}/
+        let patternPass = /[\d]{1,}[!@#$%^&*]{1,}/
+        let patternEnroll = /[0-9]{11}/
+        let patternEmail = /^\w+([\.-]?\w+)*\@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        document.addEventListener('submit', (e) => {
+            e.preventDefault()
+            validate()
+        })
+        function validate() {
+            let name = username.value;
+            let password = document.getElementById("password").value;
+            let passwordRepeat = document.getElementById("passwordRepeat").value;
+            let enroll = document.getElementById("enroll").value;
+            let email = document.getElementById("email").value;
+            let age = document.getElementById("age").value;
+
+            let regName = RegExp(patternName);
+            let regPass = RegExp(patternPass);
+            let regEnroll = RegExp(patternEnroll);
+            let regEmail = RegExp(patternEmail);
+
+            if (!regName.test(name)) {
+                alert("Enter Valid User name + " + name);
+                return false;
+            }
+            if (password.length >= 8 && password.length <= 12) {
+                if (!regPass.test(password)) {
+                    alert("Enter Valid Password");
+                    return false;
+                }
+            } else {
+                alert("Password length Should be between 8 to 12");
+                return false;
+            }
+            if (password != passwordRepeat) {
+                alert("Enter same password");
+                return false;
+            }
+            let dt = new Date();
+            let inputDate = new Date(age);
+            if (dt.getFullYear() - inputDate.getFullYear() < 18) {
+                alert("Age should be greater than 18");
+                return false;
+            }
+
+            if (!regEnroll.test(enroll)) {
+                alert("Enter Valid Enrollment number +" + enroll);
+                return false;
+            }
+            if (!regEmail.test(email)) {
+                alert("Enter Valid Email + " + email);
+                return false;
+            }
+            alert("Success !!");
+            return true;
+        }
+    </script>
+</body>
+
+</html>

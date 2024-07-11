@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-01</title>
+</head>
+
+<body>
+    <button id="button" style="width: 5%;margin:  10%; " onclick="changeBGcolor()">Click</button>
+
+    <script>
+        let btn = document.getElementById("button");
+        let toggle = false;
+        changeBGcolor();
+        function changeBGcolor() {
+            if(!toggle){
+                btn.style.backgroundColor = 'lightblue';
+                toggle = !toggle;
+            }
+            else{
+                btn.style.backgroundColor = 'black';
+                btn.style.color = 'white';
+                toggle = !toggle;
+            }
+        }
+    </script>
+</body>
+
+</html>

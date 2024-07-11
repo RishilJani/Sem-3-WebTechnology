@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Enter a string : ");
+        let arr = str.split(" ");
+        let word = prompt("Enter word to find : ");
+        let i ;
+        for(i = 0;i < arr.length;i++){
+            if(arr[i] == word){
+                break;
+            }
+        }
+        document.write(`index of ${word} is ${i}`);
+        document.write("<br/>a  =  " + arr);
+    </script>
+</body>
+</html>

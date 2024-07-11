@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing HTMl Element</title>
+</head>
+
+<body style="padding: 5%;">
+    <input type="text" id="userInput" />
+    <button id="click" onclick="change()">Click To Toggle</button>
+    <button id="click" onclick="changeColor()">Click To Change Color</button>
+    <script>
+        let input = document.getElementById("userInput");
+        let type = false;
+        let color = false;
+        changeColor();
+        function change() {
+            if (!type) {
+                input.type = 'date';
+            } else {
+                input.type = 'text';
+            }
+            type = !type;
+        }
+        function changeColor() {
+            if (!color) {
+                input.style.backgroundColor = 'lightgreen';
+            } else {
+                input.style.backgroundColor = 'lightblue';
+            }
+            color = !color;
+        }
+    </script>
+</body>
+
+</html>

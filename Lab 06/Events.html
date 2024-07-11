@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        #mouseEvent {
+            margin-top: 5%;
+            padding: 2%;
+            border: 1px solid black;
+            height: 2vh;
+            width: 15%;
+            text-align: center;
+            float: left;
+        }
+        #KeyEvent {
+            margin: 5%;
+            padding: 2%;
+            border: 1px solid black;
+            height: 2vh;
+            width: 15%;
+            text-align: center;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mouseEvent">
+        MouseEvent = 
+    </div>
+    <div id="KeyEvent">
+        Keydown event = 
+    </div>
+    <script>
+        document.addEventListener('click', () => display('click'));
+        document.addEventListener('dblclick', () => display('doubleClick'));
+        document.addEventListener('mouseout', () => display('mouseout'));
+        document.addEventListener('mousemove', () => display('mousemove'));
+
+        let obj = document.getElementById("mouseEvent");
+        function display(str) {
+            switch (str) {
+                case 'click':
+                    obj.innerHTML = "MouseEvent = " + str;
+                    break;
+
+                case 'doubleClick':
+                    obj.innerHTML = "MouseEvent = "+'Double Clicked';
+                    break;
+
+                case 'mouseout':
+                    obj.innerHTML = "MouseEvent = "+'Mouse Out';
+                    break;
+
+                case 'mousemove':
+                    obj.innerHTML = "MouseEvent = "+'Mouse Moving';
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        let obj2 = document.getElementById('KeyEvent');
+        document.addEventListener('keydown', (e) => {
+            obj2.innerHTML = "Keydown event = " + e.key;
+        })
+    </script>
+</body>
+
+</html>
