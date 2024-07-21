@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p id="t"></p>
+    <input type="text" onkeydown="check(event)"/>
+    <script>
+        count = 0;
+        let mypara = document.getElementById("t");
+        mypara.innerHTML
+        function check(event){
+            let para = event.key;
+            console.log("para: "+para);
+            console.log(mypara.length);
+            count++;
+            console.log(count);
+            if(count>t.length){
+                alert("done");
+            }
+
+        }
+    </script>
+</body>
+</html>

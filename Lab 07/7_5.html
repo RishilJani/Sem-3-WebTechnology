@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onmousedown="check(event)">CLick Me</button>
+    <p>0: left click</p><br>
+    <p>1: middle button click</p><br>
+    <p>2: right click</p><br>
+    <div id="res"></div>
+</body>
+<script>
+    function check(event){
+        let text ="you clicked: "+event.button;
+       document.getElementById('res').innerHTML = text;
+    }
+</script>
+</html>
